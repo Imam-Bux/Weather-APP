@@ -172,7 +172,7 @@ form button i{
 .fa-fire-flame-curved { color: #fb923c; }
 .fa-sun { color: #facc15; }
 
-/* --- Map --- */
+
 .map-wrapper {
     overflow: hidden;
     min-height: 300px;
@@ -192,6 +192,7 @@ form button i{
     left: 50%;
     transform: translateX(-50%); 
     width: max-content;
+    min-width:300px;
     height: auto; 
     padding: 10px 20px;
     display: none; 
@@ -243,11 +244,9 @@ form button i{
 }
 
 .footer strong {
-    color: var(--accent); /* Makes your name pop in blue */
+    color: var(--accent); 
     font-weight: 600;
 }
-
-/* Ensure footer stays at the bottom on mobile */
 @media (max-width: 768px) {
     .footer {
         margin-top: 20px;
@@ -288,4 +287,5 @@ form button i{
     background: var(--accent);
     color: #0f172a;
     transform: rotate(90deg); /* Cool tech animation */
+
 }
