@@ -192,7 +192,6 @@ form button i{
     left: 50%;
     transform: translateX(-50%); 
     width: max-content;
-    min-width:300px;
     height: auto; 
     padding: 10px 20px;
     display: none; 
@@ -208,6 +207,7 @@ form button i{
 
 #alertBox p {
     margin: 0;
+    margin-right: 10px;
     font-size: 1rem;
     white-space: nowrap; 
 }
@@ -289,3 +289,4 @@ form button i{
     transform: rotate(90deg); /* Cool tech animation */
 
 }
+
