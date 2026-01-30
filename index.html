@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Pro | Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div id="alertBox">
+                <p id="alertText">City not found</p>
+                <button onclick="boxVanish()">OK</button>
+            </div>
+            <form action="#" class="searchBox" onsubmit="getWeatherData(event)">
+                <input id="input" type="text" placeholder="Search for a city..." autocomplete="off">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <form action="#" class="searchBox" onsubmit="getWeatherData(event)">
+                <button type="button" onclick="getLocation()" id="location-btn">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                </button>
+            </form>
+        </header>
+
+        <main id="Container2">
+            <section class="weather-container">
+                <div class="weather-icon-box">
+                    <img id="weather-icon" src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="weather icon">
+                    <h1 id="temperature">22℃</h1>
+                </div>
+                <h3 id="city">Hyderabad, <span id="country">Pakistan</span></h3>
+            </section>
+
+            <section class="weatherDetails">
+                <div class="detail-card humidity">
+                    <span class="label">Humidity</span>
+                    <i class="fa-solid fa-droplet"></i>
+                    <p id="humidity" class="value">60%</p>
+                </div>
+                <div class="detail-card windspeed">
+                    <span class="label">Wind Speed</span>
+                    <i class="fa-solid fa-wind"></i>
+                    <p id="windspeed" class="value">18km/h</p>
+                </div>
+                <div class="detail-card feelsLike">
+                    <span class="label">Feels Like</span>
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <p id="feelsLike" class="value">30℃</p>
+                </div>
+                <div class="detail-card uvIndex">
+                    <span class="label">UV Index</span>
+                    <i class="fa-solid fa-sun"></i>
+                    <p id="uvIndex" class="value">7</p>
+                </div>
+            </section>
+
+            <section class="map-wrapper">
+                <iframe 
+                    id="google-map"
+                    src="https://maps.google.com/maps?q=Hyderabad,Pakistan&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>Made by <strong>Imam Bux</strong> &copy; 2026. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

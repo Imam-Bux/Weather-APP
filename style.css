@@ -1,0 +1,291 @@
+:root {
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --accent: #38bdf8;
+    --text-main: #f8fafc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at top right, #0f172a, #020617);
+    color: var(--text-main);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.searchBox {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 5px 5px 5px 20px;
+    transition: all 0.3s ease;
+}
+
+.searchBox:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+form button i{
+    color: black;
+    font-size: 1.2rem;
+}
+.searchBox input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.searchBox button {
+    background: var(--accent);
+    color: black;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.searchBox button:hover {
+    transform: scale(1.1);
+}
+
+/* --- Layout Grid --- */
+#Container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.weather-container, .detail-card, .map-wrapper {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Main Weather Card --- */
+.weather-container {
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.weather-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+#temperature {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+#weather-icon {
+    width: 80px;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+}
+
+#city {
+    font-weight: 400;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* --- Stats Grid --- */
+.weatherDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.detail-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover { transform: translateY(-5px); }
+
+.detail-card .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+.detail-card i {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.detail-card .value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Icon Colors */
+.fa-droplet { color: #38bdf8; }
+.fa-wind { color: #94a3b8; }
+.fa-fire-flame-curved { color: #fb923c; }
+.fa-sun { color: #facc15; }
+
+/* --- Map --- */
+.map-wrapper {
+    overflow: hidden;
+    min-height: 300px;
+}
+
+#google-map {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(100%) invert(90%) contrast(1.2); /* Tech dark map */
+}
+
+
+#alertBox {
+    position: absolute;
+    bottom: calc(100% + 15px); 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: max-content;
+    height: auto; 
+    padding: 10px 20px;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3); 
+    color: white;
+    border: 1px solid #ef4444;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+#alertBox p {
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap; 
+}
+
+#alertBox button {
+    border-radius: 6px;
+    border: none;
+    background: rgba(0, 191, 255, 0.8);
+    padding: 5px 12px;
+    color: white;
+    margin-left: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+#alertBox button:hover {
+    background: rgba(0, 191, 255, 1);
+}
+/* --- Footer Styling --- */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 10px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    opacity: 0.5;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.footer strong {
+    color: var(--accent); /* Makes your name pop in blue */
+    font-weight: 600;
+}
+
+/* Ensure footer stays at the bottom on mobile */
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 20px;
+        padding-bottom: 30px;
+    }
+}
+/* --- Responsiveness --- */
+@media (max-width: 1024px) {
+    #Container2 { grid-template-columns: 1fr 1fr; }
+    .map-wrapper { grid-column: span 2; }
+    #alertBox{
+     margin-bottom: 5px;   
+    }
+}
+
+@media (max-width: 768px) {
+    #Container2 { grid-template-columns: 1fr; }
+    .map-wrapper, .weather-container { grid-column: span 1; }
+    #temperature { font-size: 2.8rem; }
+}
+#location-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#location-btn:hover {
+    background: var(--accent);
+    color: #0f172a;
+    transform: rotate(90deg); /* Cool tech animation */
+}
