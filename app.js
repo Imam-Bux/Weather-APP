@@ -44,6 +44,7 @@ async function getWeatherData(event) {
 function boxVanish() {
     alertBox.style.display = "none"
     input.value = ""
+    alertText.textContent="City not found"
 }
 window.addEventListener("DOMContentLoaded", () => {
     const savedCity = localStorage.getItem("lastCity");
@@ -72,4 +73,5 @@ function getLocation() {
         alertBox.style.display = "flex"
         alertText.textContent = "Geolocation is not supported by your browser."
     }
+
 }
